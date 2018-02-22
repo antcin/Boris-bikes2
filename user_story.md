@@ -92,3 +92,4 @@ docking_station <-- release_bike --> bike
 - Created unit test for ```bike```, test failed in ```rspec```. To make the test pass, we defined a method ```bike``` in ```DockingStation```
 - Created a unit test for ```bike``` method, returning a docked bike. Test failed because method was empty (returning ```nil``` instead of instance of ```Bike``` class). We created a ```@bike``` instance variable and assigned ```Bike``` object to it.
 - Method ```bike``` now returns instance variable ```@bike```.
+- To refactor our code we used ```attr_reader :bike``` syntax and deleted ```bike``` method from ```docking_station.rb``` and ```docking_station_spec.rb``` --> **referential transparency** 
