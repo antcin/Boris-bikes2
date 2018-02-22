@@ -70,3 +70,12 @@ docking_station <-- release_bike --> bike
 - Added a spec to ```docking_station_spec``` to release a bike. Running ```rspec``` will give an error, because test syntax ```be_working``` expects the program to return ```true```, whereas our method still returns ```nil```. ***To fix this***, we let ```working?``` method return ```true```.
 - In ```DockingStation``` , in method ```release_bike``` we have instantiated a bike object (```Bike.new```); In order to do that we ```require 'bike'```. In this case, using ```require``` only would give us a ```LoadError``` because ```irb``` tries to search into Ruby's library path which doesn't contain any ```bike``` file.
   - We used ```require_relative 'bike'``` to load instances of ```Bike``` class into ```DockingStation```
+
+# challenge11 #
+
+| Objects        | Messages        |
+| -------------- |:---------------:|
+| person         | use_bike        |
+| bike           | is_working?     |   
+| docking_station| release_bike    |  
+| bike           | dock
