@@ -78,13 +78,17 @@ docking_station <-- release_bike --> bike
 | person         | use_bike        |
 | bike           | is_working?     |   
 | docking_station| release_bike    |
-| docking_station| dock_bike       |
-| bike           | docked?         |
+| docking_station| dock       |
+| docking_station           | bike         |
 
-- Ran feature test for ```dock_bike``` method to see if bike has been docked at ```DockingStation``` object. Test was failing because method was undefined.
-- Wrote unit test to check that docking station was responding to method ```dock_bike```. Test was failing, because method did not exist in ```DockingStation``` class.
-- Defined ```dock_bike``` method in ```DockingStation``` class. Ran successful unit test.
+- Ran feature test for ```dock``` method to see if bike has been docked at ```DockingStation``` object. Test was failing because method was undefined.
+- Wrote unit test to check that docking station was responding to method ```dock```. Test was failing, because method did not exist in ```DockingStation``` class.
+- Defined ```dock``` method in ```DockingStation``` class. Ran successful unit test.
 - We needed the ```DockingStation``` instance to have the ability to remember instances of ```Bike``` class
 - Ran a test on dock_bike without an argument; test failed
-- Assigned an argument to ```dock_bike``` method; test passed
-- When we called ```dock_bike``` method on ```DockingStation``` in feature test; nil is returned
+- Assigned an argument to ```dock``` method; test passed
+- When we called ```dock``` method on ```DockingStation``` in feature test; nil is returned
+- Ran feature test to see if ```DockingStation``` instance responds to method called ```bike```. Test failed because no such method was defined.
+- Created unit test for ```bike```, test failed in ```rspec```. To make the test pass, we defined a method ```bike``` in ```DockingStation```
+- Created a unit test for ```bike``` method, returning a docked bike. Test failed because method was empty (returning ```nil``` instead of instance of ```Bike``` class). We created a ```@bike``` instance variable and assigned ```Bike``` object to it.
+- Method ```bike``` now returns instance variable ```@bike```.
