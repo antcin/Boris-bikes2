@@ -77,5 +77,14 @@ docking_station <-- release_bike --> bike
 | -------------- |:---------------:|
 | person         | use_bike        |
 | bike           | is_working?     |   
-| docking_station| release_bike    |  
-| bike           | dock
+| docking_station| release_bike    |
+| docking_station| dock_bike       |
+| bike           | docked?         |
+
+- Ran feature test for ```dock_bike``` method to see if bike has been docked at ```DockingStation``` object. Test was failing because method was undefined.
+- Wrote unit test to check that docking station was responding to method ```dock_bike```. Test was failing, because method did not exist in ```DockingStation``` class.
+- Defined ```dock_bike``` method in ```DockingStation``` class. Ran successful unit test.
+- We needed the ```DockingStation``` instance to have the ability to remember instances of ```Bike``` class
+- Ran a test on dock_bike without an argument; test failed
+- Assigned an argument to ```dock_bike``` method; test passed
+- When we called ```dock_bike``` method on ```DockingStation``` in feature test; nil is returned
