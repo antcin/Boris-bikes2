@@ -80,6 +80,7 @@ docking_station <-- release_bike --> bike
 | docking_station| release_bike    |
 | docking_station| dock       |
 | docking_station           | bike         |
+| docking_station| available?
 
 - Ran feature test for ```dock``` method to see if bike has been docked at ```DockingStation``` object. Test was failing because method was undefined.
 - Wrote unit test to check that docking station was responding to method ```dock```. Test was failing, because method did not exist in ```DockingStation``` class.
@@ -93,6 +94,7 @@ docking_station <-- release_bike --> bike
 - Created a unit test for ```bike``` method, returning a docked bike. Test failed because method was empty (returning ```nil``` instead of instance of ```Bike``` class). We created a ```@bike``` instance variable and assigned ```Bike``` object to it.
 - Method ```bike``` now returns instance variable ```@bike```.
 - To refactor our code we used ```attr_reader :bike``` syntax and deleted ```bike``` method from ```docking_station.rb``` and ```docking_station_spec.rb``` --> **referential transparency**
+<<<<<<< HEAD
 
 # challenge12 #
 - Ran feature test in irb. Docking station instatiates a new bike every time ```release_bike``` method is called.
@@ -105,3 +107,5 @@ docking_station <-- release_bike --> bike
 - Rewrote the test for ```dock``` method in ```docking_station_spec.rb```. It raises an error when dock is full.
 - In ```bike.rb```, used ```raise``` to raise exception in ```dock``` method. Along with that, used a guard condition.
 - Tests pass
+=======
+>>>>>>> 286c698326b32e7c7b2f0cff3157dc05232f0661
