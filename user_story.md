@@ -92,4 +92,16 @@ docking_station <-- release_bike --> bike
 - Created unit test for ```bike```, test failed in ```rspec```. To make the test pass, we defined a method ```bike``` in ```DockingStation```
 - Created a unit test for ```bike``` method, returning a docked bike. Test failed because method was empty (returning ```nil``` instead of instance of ```Bike``` class). We created a ```@bike``` instance variable and assigned ```Bike``` object to it.
 - Method ```bike``` now returns instance variable ```@bike```.
-- To refactor our code we used ```attr_reader :bike``` syntax and deleted ```bike``` method from ```docking_station.rb``` and ```docking_station_spec.rb``` --> **referential transparency** 
+- To refactor our code we used ```attr_reader :bike``` syntax and deleted ```bike``` method from ```docking_station.rb``` and ```docking_station_spec.rb``` --> **referential transparency**
+
+# challenge12 #
+- Ran feature test in irb. Docking station instatiates a new bike every time ```release_bike``` method is called.
+- Rewrote the test for ```release_bike``` method in ```docking_station_spec.rb```. It now raises an error when there are no bikes available.
+- In ```bike.rb```, used ```raise``` to raise exception in ```release_bike``` method.
+- Ran both feature and ```rspec``` test, both pass.
+- We use curly braces syntax because matchers in ```rspec``` can only be matched against blocks because they have to observe the block while it's running in order to operate properly.
+
+# challenge13 #
+- Rewrote the test for ```dock``` method in ```docking_station_spec.rb```. It raises an error when dock is full.
+- In ```bike.rb```, used ```raise``` to raise exception in ```dock``` method. Along with that, used a guard condition.
+- Tests pass
