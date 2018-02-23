@@ -10,7 +10,7 @@ describe DockingStation do
 
   describe '#dock' do
     it 'raises an error when dock capacity is reached' do
-    subject.dock(Bike.new)
+    20.times { subject.dock(Bike.new) }
     expect { subject.dock(Bike.new) }.to raise_error "Dock is full"
     end
   end
